@@ -24,14 +24,14 @@ void setup() {
 void loop() {
   buttonState = digitalRead(buttonPin);
   if (buttonState == HIGH && pos < 10) {
-    for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    for (pos = 0; pos <= 55; pos += 1) { // goes from 0 degrees to 55 degrees
       myservo.write(pos);              // tell servo to go to position in variable 'pos'
       delay(25);                       // waits 15ms for the servo to reach the position
     }
-  } else if (buttonState == HIGH && pos > 170){
-    for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+  } else if (buttonState == HIGH && pos > 55){
+    for (pos = 55; pos >= 0; pos -= 1) { // goes from 55 degrees to 0 degrees
       myservo.write(pos);              // tell servo to go to position in variable 'pos'
-      delay(25);                       // waits 15ms for the servo to reach the position
+      delay(25);                       // waits 25ms for the servo to reach the position
     }
   } else {
     myservo.write(pos);              // tell servo to go to position in variable 'pos'
